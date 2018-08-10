@@ -179,3 +179,13 @@ button:hover {
 		width: 49%;
 	}
 }
+
+/* ================================= 
+  CSS Added by Student
+==================================== */
+
+.error {
+	color: red;
+	font-weight: bold;
+	border-color: red;
+}

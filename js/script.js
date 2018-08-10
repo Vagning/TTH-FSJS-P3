@@ -6,9 +6,11 @@
   const otherTitle = document.getElementById('other-title');
   const tshirtDesign = document.getElementById('design');
   const tshirtColor = document.getElementById('color');
+  const tshirtColorDiv = document.getElementById('colors-js-puns');
   const tshirtColorOptions = tshirtColor.children;
   const activityInputs = document.querySelectorAll('.activities input');
-  
+
+
   //Createing the Total cost text, setting text
   const totalCostText = document.createElement('P');
   $(totalCostText).text("Total cost: $");
@@ -44,6 +46,9 @@
   //Hiding the other title field when the page loads
   $(otherTitle).hide();
 
+    //Hide color div from beginging
+  $(tshirtColorDiv).hide();
+
   //appending the text field after the job role selected if the "other" option is selected
   $(titleSelect).change(() => {
   	//Check if the value of the current selected option is "other", if true show the text field if not don't
@@ -58,15 +63,19 @@
   //When the user chosses design the script will change the color select so only the colors for the choosen design is shown.
   $(tshirtDesign).change((event) => {
   	const tagetValue = event.target.value;
-  	let designType;
+  	let designType
 
   	//Sets the designType depending on which design is choosen by the user.
   	switch (tagetValue) {
   		case 'js puns':
   			designType = 'JS Puns';
+        //Show color chooser
+        $(tshirtColorDiv).show();
   			break;
   		case 'heart js':
   			designType = 'I ♥ JS';
+        //Show color chooser
+        $(tshirtColorDiv).show();
   			break;
   		default:
   			designType = '';
